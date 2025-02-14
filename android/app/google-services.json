@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "533509045041",
+    "project_id": "lingvochat-c28cc",
+    "storage_bucket": "lingvochat-c28cc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533509045041:android:990aa78d086f245545ce10",
+        "android_client_info": {
+          "package_name": "com.example.language_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkwx1WfnO0WHjnF6tICv1gW4C4uNfg2Ek"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
