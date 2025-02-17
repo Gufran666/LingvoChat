@@ -21,22 +21,22 @@ class QuizQuestion {
 
   // JSON deserialization
   factory QuizQuestion.fromJson(Map<String, dynamic> json) {
-    String correctAnswer = json['correctAnswer'] ?? ""; // Default to empty string
+    String correctAnswer = json['correctAnswer'] ?? "";
     List<String> optionsList = List<String>.from(json['options'] ?? []);
 
     return QuizQuestion(
-      questionText: json['question'] ?? "Unknown Question", // Avoid null errors
+      questionText: json['question'] ?? "Unknown Question",
       options: optionsList,
-      correctAnswerIndex: optionsList.indexOf(correctAnswer), // Convert answer to index
+      correctAnswerIndex: optionsList.indexOf(correctAnswer),
     );
   }
 
-  // JSON serialization
+
   Map<String, dynamic> toJson() {
     return {
       'question': questionText,
       'options': options,
-      'correctAnswer': options[correctAnswerIndex], // Convert index back to text
+      'correctAnswer': options[correctAnswerIndex],
     };
   }
 }

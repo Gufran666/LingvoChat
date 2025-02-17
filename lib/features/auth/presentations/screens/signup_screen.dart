@@ -115,8 +115,6 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
         _emailController.text.trim(),
         _passwordController.text.trim(),
       );
-
-      // Add this check
       final authState = ref.read(authProvider);
       if (authState.user != null) {
         print("Sign up successful, navigating to home screen");

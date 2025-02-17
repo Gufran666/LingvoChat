@@ -56,7 +56,7 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final router = ref.watch(routerProvider); // Watch the GoRouter provider
+    final router = ref.watch(routerProvider);
 
     return MaterialApp.router(
       title: 'LingvoChat',
@@ -64,7 +64,7 @@ class MyApp extends ConsumerWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
-      routerConfig: router, // Use the GoRouter instance
+      routerConfig: router,
     );
   }
 }

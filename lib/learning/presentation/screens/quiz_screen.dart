@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:language_app/learning/data/lesson_model.dart';
 import 'package:language_app/learning/providers/lesson_provider.dart';
-import 'package:language_app/learning/data/quiz_question.dart'; // Ensure this import is present
+import 'package:language_app/learning/data/quiz_question.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:language_app/core/theme/app_theme.dart'; // Import AppTheme
+import 'package:language_app/core/theme/app_theme.dart';
 
 class QuizScreen extends ConsumerStatefulWidget {
   final Lesson lesson;
@@ -21,7 +21,7 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
   Map<int, int?> _userAnswers = {};
 
   List<QuizQuestion> get questions {
-    // If the lesson has no quiz questions, provide example questions
+
     if (widget.lesson.quizQuestions.isEmpty) {
       return [
         QuizQuestion(
@@ -91,14 +91,14 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
         ),
         title: Text('The LingvoChat Quiz'),
         backgroundColor: Colors.black,
-        centerTitle: true, // Center the title
+        centerTitle: true,
         titleTextStyle: AppTheme.textTheme.displayMedium?.copyWith(color: Colors.tealAccent),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Center(
           child: Container(
-            color: Colors.black, // Set the background color of the container
+            color: Colors.black,
             padding: const EdgeInsets.all(16),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -126,11 +126,11 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
                             final isSelected = _userAnswers[_currentQuestionIndex] == index;
 
                             return Card(
-                              color: Colors.black, // Set the background color to black
+                              color: Colors.black,
                               elevation: 4,
                               margin: const EdgeInsets.symmetric(vertical: 8),
                               child: ListTile(
-                                title: Text(option, style: AppTheme.textTheme.bodyMedium?.copyWith(color: Colors.deepOrange)), // Custom text color
+                                title: Text(option, style: AppTheme.textTheme.bodyMedium?.copyWith(color: Colors.deepOrange)),
                                 leading: Radio<int>(
                                   value: index,
                                   groupValue: _userAnswers[_currentQuestionIndex],

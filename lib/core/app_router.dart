@@ -90,7 +90,7 @@ final routerProvider = Provider<GoRouter>((ref) {
           }
           return MaterialPage(
             child: QuizScreen(
-              lesson: lesson, // Pass the Lesson object as extra
+              lesson: lesson,
             ),
             key: state.pageKey,
           );
@@ -156,22 +156,22 @@ final routerProvider = Provider<GoRouter>((ref) {
       final isWelcome = state.uri.toString() == '/welcome';
       final isAuthScreen = state.uri.toString() == '/login' || state.uri.toString() == '/signup';
 
-      // Ensure the splash screen is always shown first when the app starts
+
       if (isSplash) {
-        return null; // Stay on the splash screen
+        return null;
       }
 
-      // After the splash screen, always go to the welcome screen
+
       if (!isWelcome && !loggedIn && !isAuthScreen) {
         return '/welcome';
       }
 
-      // If the user is logged in, prevent them from going to auth screens
+
       if (loggedIn && isAuthScreen) {
         return '/home';
       }
 
-      return null; // No redirection needed
+      return null;
     },
 
   );

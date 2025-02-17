@@ -16,9 +16,9 @@ class LessonRepository {
   Future<List<Lesson>> fetchLessons() async {
     if (await _networkService.isConnected) {
       final snapshot = await _firestore.collection('lessons').get();
-      print('Fetched data: ${snapshot.docs.map((doc) => doc.data()).toList()}'); // Log fetched data
+      print('Fetched data: ${snapshot.docs.map((doc) => doc.data()).toList()}');
 
-      // Additional logging to check data types
+
       for (var doc in snapshot.docs) {
         var data = doc.data();
         print("Fetched Firestore Data: ${data}");
@@ -32,9 +32,8 @@ class LessonRepository {
 
       final lessons = snapshot.docs.map((doc) {
         final data = doc.data() as Map<String, dynamic>;
-        print('Processing document: $data'); // Log each document
+        print('Processing document: $data');
 
-        // Ensure to handle potential null values
         return Lesson.fromJson(data);
       }).toList();
       await _saveLessonsToLocalCache(lessons);

@@ -87,7 +87,6 @@ class LessonNotifier extends StateNotifier<LessonState> {
   }
 
   void updateQuizProgress(String lessonId, int newScore) {
-    // Update the lesson with the new score or any other relevant updates
     final updatedLessons = state.lessons.map((lesson) {
       if (lesson.id == lessonId) {
         return lesson.copyWith(isCompleted: true);

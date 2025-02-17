@@ -37,7 +37,7 @@ class User {
     );
   }
 
-  // JSON deserialization
+
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
       id: json['id'],
@@ -47,7 +47,6 @@ class User {
     );
   }
 
-  // JSON serialization
   Map<String, dynamic> toJson() {
     return {
       'id': id,

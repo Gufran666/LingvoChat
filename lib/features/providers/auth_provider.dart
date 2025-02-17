@@ -71,11 +71,11 @@ class AuthNotifier extends StateNotifier<AuthState> {
       state = state.copyWith(isLoading: true, error: null);
       final user = await operation;
       state = state.copyWith(isLoading: false, user: user);
-      print("Auth Operation Successful: ${user?.uid}"); // Check if user is successfully authenticated
+      print("Auth Operation Successful: ${user?.uid}");
     } on FirebaseAuthException catch (e) {
       final errorMessage = _parseAuthError(e);
       state = state.copyWith(isLoading: false, error: errorMessage);
-      print("Firebase Auth Exception: ${e.code} - ${errorMessage}"); // Ensure error is properly parsed
+      print("Firebase Auth Exception: ${e.code} - ${errorMessage}");
     } catch (e, stackTrace) {
       state = state.copyWith(
         isLoading: false,
@@ -84,8 +84,6 @@ class AuthNotifier extends StateNotifier<AuthState> {
       print("Unexpected Error: $e, StackTrace: $stackTrace");
     }
   }
-
-  // Parse authentication error codes
   String _parseAuthError(FirebaseAuthException e) {
     switch (e.code) {
       case 'user-not-found':
@@ -117,13 +115,13 @@ class AuthNotifier extends StateNotifier<AuthState> {
     await _handleAuthOperation(
       _authRepo.signUpWithEmailAndPassword(email, password),
     );
-    // Reset error state after an unsuccessful sign-up attempt
+
     state = state.copyWith(error: null);
   }
 
   Future<void> googleSignIn() async {
     await _handleAuthOperation(_authRepo.signInWithGoogle());
-    // Reset error state after an unsuccessful sign-in attempt
+
     state = state.copyWith(error: null);
   }
 
@@ -155,12 +153,11 @@ class AuthNotifier extends StateNotifier<AuthState> {
   }
 }
 
-// Provider for AuthNotifier
+
 final authProvider = StateNotifierProvider<AuthNotifier, AuthState>((ref) {
   return AuthNotifier(ref.watch(authRepositoryProvider));
 });
 
-// Provider for AuthRepository
 final authRepositoryProvider = Provider<AuthRepository>((ref) {
   return AuthRepository();
 });

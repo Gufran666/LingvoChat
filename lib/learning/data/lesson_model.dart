@@ -3,7 +3,6 @@ import 'quiz_question.dart';
 
 part 'lesson_model.g.dart';
 
-// Lesson Model
 @HiveType(typeId: 0)
 class Lesson {
   @HiveField(0)
@@ -41,7 +40,7 @@ class Lesson {
     );
   }
 
-  // JSON deserialization
+
   factory Lesson.fromJson(Map<String, dynamic> json) {
     print('Raw JSON before deserialization: $json');
     return Lesson(
@@ -57,7 +56,7 @@ class Lesson {
     );
   }
 
-  // JSON serialization
+
   Map<String, dynamic> toJson() {
     return {
       'id': id,
@@ -69,7 +68,7 @@ class Lesson {
   }
 }
 
-// LessonContent Model
+
 @HiveType(typeId: 1)
 class LessonContent {
   @HiveField(0)
@@ -80,7 +79,7 @@ class LessonContent {
 
   LessonContent({required this.type, required this.data});
 
-  // JSON serialization
+
   Map<String, dynamic> toJson() {
     return {
       'type': type,
@@ -88,7 +87,7 @@ class LessonContent {
     };
   }
 
-  // JSON deserialization
+
   factory LessonContent.fromJson(Map<String, dynamic> json) {
     return LessonContent(
       type: json['type'] as String,

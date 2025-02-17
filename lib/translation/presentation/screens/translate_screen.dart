@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:language_app/core/theme/app_theme.dart';
 import 'package:language_app/translation/providers/translation_provider.dart';
-import 'package:language_app/translation/data/mock_translation_repository.dart'; // Ensure this import
+import 'package:language_app/translation/data/mock_translation_repository.dart';
 
 class TranslateScreen extends ConsumerStatefulWidget {
   const TranslateScreen({super.key});

@@ -12,12 +12,12 @@ class NetworkService {
   }
 
   Future<List<ConnectivityResult>> get connectivityStatus async {
-    // Correctly return a single ConnectivityResult instead of a List<ConnectivityResult>
+
     return await _connectivity.checkConnectivity();
   }
 
   Stream<List<ConnectivityResult>> get connectivityStream {
-    // Correctly return a Stream<ConnectivityResult> instead of a Stream<List<ConnectivityResult>>
+
     return _connectivity.onConnectivityChanged;
   }
 

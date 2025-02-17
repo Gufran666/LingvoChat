@@ -21,11 +21,11 @@ class LanguagePreferencesScreen extends ConsumerWidget {
         centerTitle: true,
         backgroundColor: Colors.black,
       ),
-      body: Center( // Center the contents of the screen
+      body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-            mainAxisSize: MainAxisSize.min, // Center the contents of the column
+            mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text('Select your preferred languages:', style: AppTheme.textTheme.bodyLarge?.copyWith(color: Colors.white)),
@@ -38,7 +38,7 @@ class LanguagePreferencesScreen extends ConsumerWidget {
                     final isSelected = selectedLanguages.contains(language);
 
                     return Card(
-                      color: Colors.black, // Change this color to your desired card color
+                      color: Colors.black,
                       elevation: 4,
                       margin: const EdgeInsets.symmetric(vertical: 8),
                       child: ListTile(
@@ -60,12 +60,12 @@ class LanguagePreferencesScreen extends ConsumerWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pop(context); // Go back to the profile screen
+                  Navigator.pop(context);
                 },
                 child: const Text('Save Changes'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.green,
-                  textStyle: AppTheme.textTheme.bodyMedium?.copyWith(color: Colors.white), // Change button text color
+                  textStyle: AppTheme.textTheme.bodyMedium?.copyWith(color: Colors.white),
                 ),
               ),
             ],

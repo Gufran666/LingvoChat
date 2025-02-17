@@ -7,7 +7,7 @@ import 'package:language_app/chat/presentation/widgets/message_bubble.dart';
 import 'package:language_app/chat/data/message_model.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:hive/hive.dart';
-import 'package:language_app/chat/data/conversation_flow.dart'; // Import conversation flow class
+import 'package:language_app/chat/data/conversation_flow.dart';
 
 class ChatScreen extends ConsumerStatefulWidget {
   const ChatScreen({super.key});
@@ -43,7 +43,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
       print("Loading messages from Hive...");
       setState(() {
         _messages.addAll(_chatBox.values.toList());
-        _isLoading = false; // Stop loading once messages are loaded
+        _isLoading = false;
       });
 
       print("Loaded messages: ${_messages.length}");
@@ -74,7 +74,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
         ],
       ),
       body: _isLoading
-          ? const Center(child: CircularProgressIndicator()) // Show loading
+          ? const Center(child: CircularProgressIndicator())
           : Column(
         children: [
           Expanded(

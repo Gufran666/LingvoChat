@@ -10,7 +10,7 @@ class GrammerChecker {
     return result.map((e) => GrammerError(
         e.offset,
         e.length,
-        e.message ?? 'Possible Error'
-    )).toList();
+        e.message ?? 'Possible Error',
+    ).toList();
   }
 }

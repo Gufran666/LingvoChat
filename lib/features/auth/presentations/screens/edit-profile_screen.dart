@@ -31,13 +31,13 @@ class EditProfileScreen extends ConsumerWidget {
         centerTitle: true,
         backgroundColor: Colors.black,
       ),
-      body: Center( // Center the contents of the screen
+      body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Form(
             key: _formKey,
             child: Column(
-              mainAxisSize: MainAxisSize.min, // Center the contents of the column
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 TextFormField(
@@ -46,15 +46,15 @@ class EditProfileScreen extends ConsumerWidget {
                     labelText: 'Name',
                     labelStyle: const TextStyle(color: Colors.white),
                     enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.white), // Change border color
+                      borderSide: const BorderSide(color: Colors.white),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.white), // Change focused border color
+                      borderSide: const BorderSide(color: Colors.white),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
-                  style: const TextStyle(color: Colors.black), // Change input text color
+                  style: const TextStyle(color: Colors.black),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your name';
@@ -67,17 +67,16 @@ class EditProfileScreen extends ConsumerWidget {
                   controller: _emailController,
                   decoration: InputDecoration(
                     labelText: 'Email',
-                    labelStyle: const TextStyle(color: Colors.white), // Change label text color
+                    labelStyle: const TextStyle(color: Colors.white),
                     enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.white), // Change border color
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderSide: const BorderSide(color: Colors.white),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.white), // Change focused border color
+                      borderSide: const BorderSide(color: Colors.white),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
-                  style: const TextStyle(color: Colors.black), // Change input text color
+                  style: const TextStyle(color: Colors.black),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your email';
@@ -97,13 +96,13 @@ class EditProfileScreen extends ConsumerWidget {
                         displayName: _nameController.text,
                         email: _emailController.text,
                       );
-                      Navigator.pop(context); // Go back to the profile screen
+                      Navigator.pop(context);
                     }
                   },
                   child: const Text('Save Changes'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green,
-                    textStyle: AppTheme.textTheme.bodyMedium?.copyWith(color: Colors.white), // Change button text color
+                    textStyle: AppTheme.textTheme.bodyMedium?.copyWith(color: Colors.white),
                   ),
                 ),
               ],

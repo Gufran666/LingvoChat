@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:language_app/core/theme/app_theme.dart';
 import 'package:language_app/features/providers/auth_provider.dart';
-import 'package:language_app/learning/data/lesson_model.dart'; // Import the Lesson model
+import 'package:language_app/learning/data/lesson_model.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -21,7 +21,7 @@ class HomeScreen extends ConsumerWidget {
         ),
       ],
       quizQuestions: [],
-    ); // Example lesson object
+    );
 
     return Scaffold(
       appBar: AppBar(
@@ -182,7 +182,7 @@ class HomeScreen extends ConsumerWidget {
           Text('Daily Goals', style: AppTheme.textTheme.displayMedium?.copyWith(color: AppTheme.surfaceColor)),
           const SizedBox(height: 10),
           LinearProgressIndicator(
-            value: 0.6, // Example progress value
+            value: 0.6,
             minHeight: 8,
             color: AppTheme.textColor,
             backgroundColor: Colors.grey.shade200,

@@ -46,17 +46,17 @@ class LessonsScreen extends ConsumerWidget {
       itemBuilder: (ctx, index) {
         final lesson = state.lessons[index];
 
-        // Log lesson data for debugging
+
         print('Displaying lesson: ${lesson.toJson()}');
 
-        // Ensure null values are handled gracefully
+
         return LessonCard(
           lesson: Lesson(
             id: lesson.id,
             title: lesson.title, // Handle potential null title
-            content: lesson.content.isNotEmpty ? lesson.content : [LessonContent(type: 'text', data: 'No content available')], // Handle potential empty content
+            content: lesson.content.isNotEmpty ? lesson.content : [LessonContent(type: 'text', data: 'No content available')],
             isCompleted: lesson.isCompleted,
-            quizQuestions: lesson.quizQuestions.isNotEmpty ? lesson.quizQuestions : [], // Handle potential empty quizQuestions
+            quizQuestions: lesson.quizQuestions.isNotEmpty ? lesson.quizQuestions : [],
           ),
           onTap: () => _navigateToLessonDetail(context, lesson),
         );

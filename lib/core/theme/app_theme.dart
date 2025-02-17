@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  // Calm and Modern Color Palette
   static const Color primaryColor = Color(0xFFFF8A65);
   static const Color secondaryColor = Color(0xFFFFEB3B);
   static const Color backgroundColor = Color(0xFFF5F5F5);

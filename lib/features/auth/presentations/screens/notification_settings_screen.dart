@@ -53,8 +53,7 @@ class _NotificationSettingsScreenState extends ConsumerState<NotificationSetting
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Save notification preferences logic
-                // You can use a provider or shared preferences to save the selected preferences
+
                 Navigator.pop(context);
               },
               child: const Text('Save Preferences'),
